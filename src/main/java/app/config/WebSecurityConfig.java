@@ -16,18 +16,11 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-
-
-//    public WebSecurityConfig(MvcConfig mvcConfig) {
-//        this.mvcConfig = mvcConfig;
-//    }
-//
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .authorizeRequests()
-               // .antMatchers("/css/*","/","/img/**", "/sign-up","/ls" ,"/js/*","/reset-password").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
